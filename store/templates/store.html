@@ -1,0 +1,124 @@
+{% extends "base_store.html" %}
+
+<!--Static files-->
+{% load static %}
+<!--Title-->
+{% block title %} FQ - Demo - MainPage {% endblock %}
+
+<!--Contect-->
+{% block content %}
+
+<h1 class="mt-3 font-weight-light"><i class="fas fa-store"></i> Catalogo de productos</h1>
+<hr>
+
+<div class="row">
+    <div class="col col-12">
+        <div id="accordion">
+            <div class="card mb-2">
+
+                <div class="card-header">
+                    <a class="nav-link" data-toggle="collapse" href="#collapseOne">
+            Filtros
+          </a>
+                </div>
+
+                <div id="collapseOne" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <form id="form" method="get">
+                            {{categoryFilter.form}}
+                            <input type="submit" class="btn btn-success" value="Filtrar" />
+                            <input type="submit" onclick="clearFilter()" class="btn btn-secondary" value="Quitar filtros" />
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    {% for i in products %}
+    <div class="col col-xl-3 col-lg-4 col-md-6 col-12">
+        <div class="card my-1">
+            <img class="card-img-top" src="/static/store_img/{{i.img}}" alt="{{i.img}}">
+            <div class="card-body">
+                <h6 class="card-title mb-0">{{i.name}}</h6>
+                <h5>CLP {{i.price}}.-</h5>
+                <button data-product={{i.id}} data-action="add" class="btn btn-success update-cart">Añadir al carro</button>
+                <a href="#" class="btn btn-secondary">Ver</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+</div>
+
+<script type="text/javascript">
+    function clearFilter() {
+        document.getElementById("id_name__icontains").value = ''
+        document.getElementById("id_ordering").value = '---------'
+    }
+</script>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+
+        <div class="modal-content">
+
+            <div class="form-inline">
+                <h1 class="m-3 mx-4 font-weight-light">Carro de compra</h1>
+                <a class="my-3 mx-4 btn btn-outline-secondary ml-auto" href="#" data-dismiss="modal"><i class="fas fa-times"></i></a>
+            </div>
+
+            <h5 class="mt-3 mx-4 font-weight-light">Productos: {{order.cart_total_quantity}}</h5>
+            <h5 class="mx-4 font-weight-light">Total: CLP {{order.cart_total_price}}.-</h5>
+
+            <div data-spy="scroll" class="card body-modal p-5 mt-2">
+                <div class="cart-row">
+                    <div style="flex:1"></div>
+                    <div style="flex:2"><strong>Producto</strong></div>
+                    <div style="flex:1"><strong>Precio</strong></div>
+                    <div style="flex:1"><strong>Cantidad</strong></div>
+                    <div style="flex:1"><strong>Total</strong></div>
+                </div>
+
+                {% for i in items %}
+                <div class="cart-row">
+                    <div style="flex:1"><img class="cart-image" src="/static/store_img/{{i.product.img}}"></div>
+                    <div style="flex:2">
+                        <p>{{i.product.name}}</p>
+                    </div>
+                    <div style="flex:1">
+                        <p>{{i.product.price}}.-</p>
+                    </div>
+                    <div style="flex:1">
+                        <div class="form-inline">
+                            <a class="update-cart" data-product={{i.product.id}} data-action="remove" href="#"><i class="fas fa-minus"></i></a>
+                            <p class="mb-0 mx-3">{{i.quantity}}</p>
+                            <a class="update-cart" data-product={{i.product.id}} data-action="add" href="#"><i class="fas fa-plus"></i></a>
+                        </div>
+                    </div>
+                    <div style="flex:1">
+                        <p>{{i.get_total_item}}.-</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="row p-4">
+                <div class="col col-lg-6 col-12 ml-auto form-inline">
+                    <a class="btn btn-outline-success ml-auto" href="{% url 'cart' %}">Continuar <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

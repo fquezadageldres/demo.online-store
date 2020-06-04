@@ -1,0 +1,101 @@
+{% extends "base_store.html" %}
+
+<!--Static files-->
+{% load static %}
+
+<!--Title-->
+{% block title %} FQ - Demo - MainPage {% endblock %}
+
+<!--Contect-->
+{% block content %}
+
+<h1 id="title" class="mt-3 font-weight-light">Confirmación de la compra</h1>
+<hr>
+<div class="row">
+    <div id="form-wrapper" class="col col-lg-4 col-12">
+        <div class="card p-4 mb-2">
+            <h3 class="font-weight-light"><i class="fas fa-truck"></i> Datos de envío</h3>
+            <br>
+            <form id="form">
+                <div class="form-group">
+                    <input name="name" class="form-control" type="text" value="{{customer}}" placeholder="Nombre" required>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <input name="email" class="form-control" type="email" placeholder="E-mail" required>
+                </div>
+                <div class="form-group">
+                    <input name="phone" class="form-control" type="text" value="+56" required>
+                </div>
+                <div class="form-group">
+                    <input name="adress" class="form-control" type="text" placeholder="Dirección" required>
+                </div>
+                <div class="form-group mb-0">
+                    <input id="form-button" class="btn btn-outline-success btn-block" type="submit" value="Continuar">
+                </div>
+            </form>
+        </div>
+
+        <div class="card p-4 mb-2 box-element hidden" id="payment-info">
+            <button class="btn btn-outline-primary" id="make-pay">Pagar con Paypal</button>
+        </div>
+
+    </div>
+
+
+
+    <div id="pay-box" class="col col-lg-8 col-sm-12">
+        <div class="card pt-2 px-4">
+
+            <h3 class="mt-3 font-weight-light"><i class="far fa-credit-card"></i> Detalle del pedido</h3>
+            <div class="form-group">
+                <a class="btn btn-outline-secondary" href="{% url 'store' %}"><i class="fas fa-arrow-left"></i> Seguir comprando</a>
+            </div>
+            <br>
+            <h5 class="font-weight-light">Productos: {{order.cart_total_quantity}}</h5>
+            <h5 class="font-weight-light">Total: CLP {{order.cart_total_price}}.-</h5>
+
+            <br>
+
+            <div class="cart-row">
+                <div style="flex:1"></div>
+                <div style="flex:2"><strong>Producto</strong></div>
+                <div style="flex:1"><strong>Precio</strong></div>
+                <div style="flex:1"><strong>Cantidad</strong></div>
+                <div style="flex:1"><strong>Total</strong></div>
+            </div>
+
+            {% for i in items %}
+            <div class="cart-row">
+                <div style="flex:1"><img class="cart-image-pay" src="/static/store_img/{{i.product.img}}"></div>
+                <div style="flex:2">
+                    <p>{{i.product.name}}</p>
+                </div>
+                <div style="flex:1">
+                    <p>{{i.product.price}}.-</p>
+                </div>
+                <div style="flex:1">
+                    <p class="mb-0 mx-3">{{i.quantity}}</p>
+                </div>
+                <div style="flex:1">
+                    <p>{{i.get_total_item}}.-</p>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    var form = document.getElementById('form')
+    form.addEventListener('submit', function(e) {
+        e.preventDefault()
+        console.log('Enviando formulario...')
+        document.getElementById('form-button').classList.add("hidden")
+        document.getElementById('payment-info').classList.remove("hidden")
+    })
+</script>
+
+{% endblock %}

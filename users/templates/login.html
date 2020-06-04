@@ -1,0 +1,38 @@
+{% extends "base_store.html" %}
+
+<!--Static files-->
+{% load static %}
+<!--Title-->
+{% block title %} FQ - Demo - MainPage {% endblock %}
+
+<!--Contect-->
+{% block content %}
+
+<h1 class="mt-3 font-weight-light text-center"><i class="fas fa-user"></i> Inicio de sesion</h1>
+<hr>
+
+<div class="row">
+    <div class="col col-4 mx-auto">
+
+        <div class="card p-4 mb-0 mt-2">
+
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input name="username" type="text" placeholder="Usuario" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input name="password" type="password" placeholder="Contraseña" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Ingresar" class="btn btn-block btn-primary">
+                    <small class=text-card>¿No tienes una cuenta?, registrate <a href="#">aqui</a></small>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+body {
+    background: rgb(247, 247, 247);
+    font-family: 'Ubuntu';
+    color: #4b4b4b;
+}
+
+
+/* Nav bar */
+
+.navbar {
+    padding: 8px;
+    background-color: #000;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin-top: 0px;
+}
+
+.navbar-brand a {
+    width: 70px;
+    height: 70px;
+}
+
+
+/* P003 */
+
+.row {
+    margin-top: 150px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+    width: 100%;
+}
+
+#img-upload {
+    width: 100%;
+}
+
+.msg {
+    border-radius: 10px;
+    background-color: #e3fcff;
+    border: 3px dashed #89bdd1;
+    color: #336a7c;
+}
+
+.msg h2 {
+    font-weight: 700;
+}

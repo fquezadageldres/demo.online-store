@@ -1,0 +1,59 @@
+body {
+    background: rgb(247, 247, 247);
+    font-family: 'Ubuntu';
+    color: #4b4b4b;
+}
+
+
+/* Cart */
+
+#cart-total {
+    text-align: center;
+    color: #fff;
+    background-color: orange;
+    width: 30px;
+    height: 20px;
+    border-radius: 20%;
+    font-size: 14px;
+    position: absolute;
+}
+
+.cart-row {
+    display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-image {
+    width: 80px;
+}
+
+.cart-image-pay {
+    width: 50px;
+}
+
+.card-img-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    max-height: 200px;
+}
+
+.img-msg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+
+/* Pay */
+
+.hidden {
+    display: none!important;
+}
+
+
+/* Product view */

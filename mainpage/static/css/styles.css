@@ -1,0 +1,103 @@
+body,
+html {
+    font-family: 'Ubuntu';
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    color: #777;
+    font-weight: 300;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* Nav bar */
+
+.navbar {
+    padding: 8px;
+    background-color: #000;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin-top: 0px;
+}
+
+.navbar-brand a {
+    width: 70px;
+    height: 70px;
+}
+
+
+/* Intro */
+
+#header {
+    height: 80vh;
+    background-color: #3a3a3a;
+    margin-top: 50px;
+}
+
+.intro-text {
+    margin-top: 25vh;
+    text-align: center;
+}
+
+.intro-text h1 {
+    color: rgb(228, 126, 42);
+    font-size: 5rem;
+    display: inline;
+}
+
+.intro-text h2 {
+    color: rgb(189, 189, 189);
+    font-size: 4rem;
+    text-transform: none;
+    display: inline;
+}
+
+.intro-text p {
+    color: #a1a1a1;
+    font-size: 30px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+/* Sobre mi */
+
+.about-text {
+    margin-top: 100px;
+    padding-bottom: 100px;
+}
+
+.about-text img {
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.about-text .progress {
+    height: 10px;
+}
+
+
+/* Proyectos */
+
+.project-title {
+    padding-top: 100px;
+}
+
+.project-text {
+    margin-top: 100px;
+    padding-bottom: 100px;
+}
+
+
+/* Contacto */
+
+.contact-title {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.contact-text {
+    padding-bottom: 100px;
+}

@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+<!--Loads-->
+{% load static %}
+
+<!--Title-->
+{% block title %} FQ - Demo - MainPage {% endblock %}
+
+<!--Contect-->
+{% block content %}
+
+<!--Nombre seccion-->
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-8 p-lg-2 mx-auto my-5">
+        <div class="intro-text font-weight-normal">
+            <h2>{ ' </h2>
+            <h1>Francisco Quezada</h1>
+            <h2> ' }</h2>
+            <p>Desarrollo Web / Machine Learning</p>
+        </div>
+
+        <p id="sobremi" class="lead font-weight-normal">Esta web se creo como muestra de mis habilidades en programacion web y machine learning.</p>
+    </div>
+    <div class="product-device box-shadow d-none d-md-block"></div>
+    <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+</div>
+
+<!-- Sobre min section -->
+<div class="container">
+    <div class="row">
+
+        <div class="col-xs-12 col-md-6">
+            <div class="about-text">
+                <h2>Sobre mi</h2>
+                <hr>
+                <p>Hola!, soy Francisco, desarrollador de machine learning y aplicaciones web</p>
+                <p>Me dedico a la creación y desarrollo de modelos de machine learning con fines prácticos y orientados a su deploy en la web, por medio de la integración de tecnologías como Tensorflow y Django busco dar soluciones integrales a necesidades
+                    que por otros medios resultarían demasiados costosos o impracticables.</p>
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+            <div class="about-text">
+                <h2>Tecnologias</h2>
+                <hr>
+                <table>
+                    <colgroup>
+                        <col style="width: 100px">
+                        <col style="width: 300px">
+                    </colgroup>
+                    <tr>
+                        <td><img class="tecnologias" src="{% static 'img/tecnologias/django.png' %}" alt=""></td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img class="tecnologias" src="{% static 'img/tecnologias/sklearn.png' %}" alt=""></td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img class="tecnologias" src="{% static 'img/tecnologias/tensorflow.png' %}" alt=""></td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img class="tecnologias" src="{% static 'img/tecnologias/keras.png' %}" alt=""></td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <h3>Otros</h3>
+                <table>
+                    <tr>
+                        <th><img class="tecnologias" src="{% static 'img/tecnologias/github.png' %}" alt=""></th>
+                        <th><img class="tecnologias" src="{% static 'img/tecnologias/postgresql.png' %}" alt=""></th>
+                    </tr>
+                </table>
+                <br>
+                <h3>Metodologia</h3>
+                <table>
+                    <tr>
+                        <th><img class="tecnologias" src="{% static 'img/tecnologias/scrum.png' %}" alt=""></th>
+                        <th><img class="tecnologias" src="{% static 'img/tecnologias/agile.png' %}" alt=""></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Proyectos Section -->
+<div class="container-flex proyect-contanier bg-dark text-secondary">
+    <div class="container">
+        <div id="proyectos" class="row project-title">
+            <div class="col-12 text-center">
+                <h1 class="text-light">Proyectos</h1>
+            </div>
+        </div>
+        <div class="row project-text">
+            <div class="col-12 col-lg-4 col-md-6 text-center">
+                <img class="" src="{% static 'img/portfolio/p003.png' %}" alt="Generic placeholder image" width="250">
+                <h2 class="py-3">Como perros y gatos</h2>
+                <p>Modelo de machine learning para la claisificación de imagenes por medio de redes neuronales convolucionales.</p>
+                <p><a class="btn btn-secondary" href="{% url 'p003' %}" role="button">Ir al proyecto &raquo;</a></p>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div class="col-12 col-lg-4 col-md-6 text-center">
+                <img class="" src="{% static 'img/portfolio/store1.png' %}" alt="Generic placeholder image" width="250">
+                <h2 class="py-3">Store</h2>
+                <p>Aplicacion web dedicada a la venta de productos por internet.</p>
+                <p><a class="btn btn-secondary" href="{% url 'store' %}" role="button">Ir al proyecto &raquo;</a></p>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div class="col-12 col-lg-4 col-md-6 text-center">
+                <img class="bg-light" src="{% static 'img/portfolio/construccion.png' %}" alt="Generic placeholder image" width="250">
+                <h2 class="py-3">Proximo proyecto</h2>
+                <p>Pronto se agregara otro proyecto
+                </p>
+                <p><a class="btn btn-secondary" href="#" role="button">ir al proyecto &raquo;</a></p>
+            </div>
+            <!-- /.col-lg-4 -->
+        </div>
+        <!-- /.row -->
+    </div>
+</div>
+
+<!-- Contacto Section -->
+<div id="contact" class="text-center">
+    <div class="container contact-text">
+        <div class="contact-title text-center">
+            <h2>Contacto</h2>
+            <hr>
+        </div>
+        <div class="col-12 col-md-8 col-md-offset-2 text-left">
+
+            <table>
+                <tr>
+                    <th>
+                        <h2><i class="fas fa-envelope"></i></h2>
+                    </th>
+                    <th>
+                        <h5>fquezadageldres@gmail.com</h5>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <h2><i class="fas fa-phone-alt"></i></h2>
+                    </th>
+                    <th>
+                        <h5>+569 73597426</h5>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <h2><i class="fab fa-linkedin-in"></i></h2>
+                    </th>
+                    <th>
+                        <h5>https://www.linkedin.com/in/francisco-quezada-geldres/</h5>
+                    </th>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

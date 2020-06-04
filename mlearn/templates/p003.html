@@ -1,0 +1,64 @@
+{% extends "base_mlearn.html" %}
+
+<!--Static files-->
+{% load static %}
+
+<!--Title-->
+{% block title %} FQ - Demo - MainPage {% endblock %}
+
+<!--Contect-->
+{% block content %}
+
+<div class="row">
+    <div class="col-12 col-md-1 col-lg-2 col-xl-3"></div>
+    <div class="col-12 col-md-10 col-lg-8 col-xl-6 ">
+        <h1>Como perros y gatos</h1>
+        <h4>Clasificador de imagenes CNN</h4>
+        <hr>
+        <p style="text-align: justify;">Este es un ejemplo de red neuronal convolucional y su aplicación en la clasificación de imágenes de perros y gatos, abajo podrá adjuntar una imagen que contenga dentro un perro o un gato y el modelo neuronal deberá predecir con gran acierto a
+            cual pertenece.</p>
+
+        <hr>
+        <br>
+
+        <div id="response" class="hidden">
+            <div class="msg p-4">
+                <h4 id="predict"></h4>
+                <hr>
+                <h5></h5>
+                <p id="dog" class="m-0"></p>
+                <p id="cat" class="m-0"></p>
+                <p id="other" class="m-0"></p>
+                <br>
+                <button id="reload" class="btn btn-outline-info">De nuevo!</button>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <div class="input-group">
+                <form name="form" id="form" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <span class="input-group-btn">
+                    <span class="btn btn-block btn-secondary btn-file">
+                        Buscar imagen.. <input type="file" name="file" id="imgInp">
+                    </span>
+                    </span>
+                    <input type="text" hidden class="form-control" readonly>
+                </form>
+
+            </div>
+            <img class="mx-auto" id='img-upload' />
+        </div>
+
+        <br>
+        <hr>
+        <h4>Modelo</h4>
+
+
+    </div>
+
+</div>
+
+{% endblock %}
