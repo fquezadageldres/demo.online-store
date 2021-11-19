@@ -1,5 +1,5 @@
 # App web demo Django
-Web de demostración de habilidades en Django
+Web test django
 
 ## Instalación
 Se recomienda crear un entorno virtual e instalar "requirement.txt" asi como la base de datos incluida en el proyecto "FQBD.sql" con las credenciales User:root Pass:root
